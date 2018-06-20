@@ -25,7 +25,29 @@ router.post('/', function (req, res, next) {
     }
   });
 });
-
-    
+router.get('/', function (req, res, next) {
+  User.getAllCategory(function (err, rows) {
   
+    if (err) {
+      res.json(err);
+    }
+    else {
+      res.json(rows);
+    }
+  });
+});
+
+
+router.get('/:Fk_Cat_Id', function (req, res, next) {
+  User.getProductById(req.params.Fk_Cat_Id, function (err, rows) {
+  
+    if (err) {
+      res.json(err);
+    }
+    else {
+      res.json(rows);
+    }
+  });
+});
+
 module.exports = router;

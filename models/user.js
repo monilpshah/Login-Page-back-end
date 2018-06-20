@@ -27,6 +27,18 @@ getProfile:function(emailId,callback){
  },
  forgetPassword:function(id,User,callback){
     return db.query("update usertable set password=? where emailId=?",[User.password,id]);
+ },
+ getAllProducts:function(callback){
+  return db.query("Select * from product_tbl",callback);
+ },
+ getAllCategory:function(callback){
+   return db.query("select * from cat_tbl",callback);
+ },
+ getProductById:function(Fk_Cat_Id,callback){
+   return db.query("select c.*,p.* from product_tbl p,cat_tbl c where c.Fk_Cat_Id=p.Fk_Cat_Id And c.Fk_Cat_Id=?",[Fk_Cat_Id],callback);
+ },
+ getProductDescription:function(Id,callback){
+   return db.query("select * from product_tbl where Id=?",[Id],callback);
  }
  
 };
