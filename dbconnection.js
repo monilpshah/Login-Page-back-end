@@ -4,7 +4,7 @@ var mysql=require('mysql');
 host:'localhost',
  user:'root',
  password:'',
- database:'mydatabaese' 
+ database:'mydatabase' 
  
 });
  module.exports=connection;

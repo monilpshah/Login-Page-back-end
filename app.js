@@ -12,6 +12,8 @@ var Students=require('./routes/student_route');
 var Category=require('./routes/category_route');
 var User1=require('./routes/user1_route');
 var User=require('./routes/user_route');
+var similar=require('./routes/similarproducts');
+
 var Product_tbl=require('./routes/product_tbl_route');
 var app = express();
 
@@ -31,6 +33,7 @@ app.use('/Category',Category);
 app.use('/userlogin',User1);
 app.use('/user',User);
 app.use('/product_tbl',Product_tbl);
+app.use('/similarproduct',similar);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

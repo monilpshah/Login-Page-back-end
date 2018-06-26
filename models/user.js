@@ -39,7 +39,9 @@ getProfile:function(emailId,callback){
  },
  getProductDescription:function(Id,callback){
    return db.query("select * from product_tbl where Id=?",[Id],callback);
+ },
+ getProductsByCatId:function(Fk_Cat_Id,callback){
+  return db.query("select * from product_tbl where Fk_Cat_Id=?",[Fk_Cat_Id],callback);
  }
- 
 };
  module.exports=User;
